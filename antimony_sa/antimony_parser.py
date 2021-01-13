@@ -1,4 +1,5 @@
 import lark
+import os
 
 
 # %import common.DIGIT
@@ -11,45 +12,31 @@ import lark
 # %ignore COMMENT
 # /'[^']*'/
 
-class AntimonyParser:
-    grammar = """
-        ?start: "import" FILENAME -> import_filename
+class WordTransformer(lark.Transformer):
+    word_dict = dict(
 
-        // implementation of import statement parser        
-        // DRIVE_LETTER allowed 0 or more times
-        // recursive to allow for arbitrary filename segments
-        FILENAME:  DOUBLE_QUOTE FILENAME_SEGMENT (FILENAME_SEGMENT)* DOUBLE_QUOTE 
-        FILENAME_SEGMENT: FILE_SEPARATOR WORD 
-        DOUBLE_QUOTE: /"/
-        SINGLE_QUOTE: /'/
-        WORD: /[A-Za-z0-9_\.]*/
-        FILE_SEPARATOR: "/"
-        
-        %import common.WS
-        %ignore WS
-    
-    """
+    )
+
+    def WORD(self, word):
+        if word in self.word_dict:
+            return self.word_dict[word]
+        return word
+
+
+class AntimonyParser(lark.Visitor):
+    with open(os.path.join(os.path.dirname(__file__), "grammar.lark")) as f:
+        grammar = f.read().strip()
 
     def __init__(self):
         self.lark = lark.Lark(self.grammar)
 
     def parse(self, antimony_string):
-        return self.lark.parse(antimony_string)
+        tree = self.lark.parse(antimony_string)
+        tree = WordTransformer(visit_tokens=True).transform(tree)
+        return tree
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    def assignment(self, tree):
+        # assert tree.data == "assignment"
+        # print(tree.data, type(tree.data), tree.children[1])
+        tree.children[1] = str(float(tree.children[1]) + 1)
+        return tree
