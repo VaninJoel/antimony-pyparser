@@ -2,6 +2,12 @@ import lark
 import os
 
 
+"""
+Note: idea. It'd be interesting to use this parser 
+for creating ODE models directly in Python. This *may or may not 
+be useful for the network evolution projects. 
+"""
+
 # %import common.DIGIT
 # %import common.NUMBER
 # %import common.FLOAT
@@ -18,13 +24,17 @@ class WordTransformer(lark.Transformer):
     )
 
     def WORD(self, word):
-        if word in self.word_dict:
-            return self.word_dict[word]
-        return word
+        pass
+        # if word in self.word_dict:
+        #     return self.word_dict[word]
+        # return word
 
 
 class AntimonyParser(lark.Visitor):
-    with open(os.path.join(os.path.dirname(__file__), "grammar.lark")) as f:
+    """
+
+    """
+    with open(os.path.join(os.path.dirname(__file__), "antimony_grammar.lark")) as f:
         grammar = f.read().strip()
 
     def __init__(self):

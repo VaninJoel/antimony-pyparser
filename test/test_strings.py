@@ -45,7 +45,8 @@ rateRule = '''x' = 4.4
 '''
 
 # Original source: <antimony-root>/src/test/test-data/mean.txt
-mean = '''a.mean = 25'''
+mean = '''a.mean = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/initialConcentration.txt
 initialConcentration = '''species x=3
@@ -100,7 +101,8 @@ names = '''x is "This Name!"
 '''
 
 # Original source: <antimony-root>/src/test/test-data/range.txt
-range = '''a.range = {-25, 25}'''
+range = '''a.range = {-25, 25}
+'''
 
 # Original source: <antimony-root>/src/test/test-data/sampleSize.txt
 sampleSize = '''a.sampleSize = 25
@@ -257,7 +259,8 @@ a hasVersion "BQB_thing"
 # Original source: <antimony-root>/src/test/test-data/SBO_localvar.txt
 SBO_localvar = '''model foo()
   sboTerm = 5
-end'''
+end
+'''
 
 # Original source: <antimony-root>/src/test/test-data/confidenceInterval.txt
 confidenceInterval = '''a.confidenceInterval = {0, 25}
@@ -373,6 +376,13 @@ end
 foo is "foo!"
 '''
 
+# Original source: this file
+module_name_with_astrisk = '''module *foo()
+ a=3;
+end
+foo is "foo!"
+'''
+
 # Original source: <antimony-root>/src/test/test-data/SBO_submodel.txt
 SBO_submodel = '''model foo()
 end
@@ -386,7 +396,8 @@ SBO_function = '''function foo()
   3;
 end
 
-foo.sboTerm = 8'''
+foo.sboTerm = 8
+'''
 
 # Original source: <antimony-root>/src/test/test-data/hierarchy.txt
 hierarchy = '''model foo()
@@ -459,7 +470,8 @@ SBO_module_rt = '''// Created by libAntimony v2.12.0
 model *foo()
 end
 
-foo.sboTerm = 8'''
+foo.sboTerm = 8
+'''
 
 # Original source: <antimony-root>/src/test/test-data/deletion.txt
 deletion = '''model foo()
@@ -551,7 +563,8 @@ function foo()
   3;
 end
 
-foo.sboTerm = 8'''
+foo.sboTerm = 8
+'''
 
 # Original source: <antimony-root>/src/test/test-data/deleteAssignmentRuleIndirect.txt
 deleteAssignmentRuleIndirect = '''model foo()
@@ -1251,7 +1264,8 @@ a = ;
 const a;
 
 // SBO terms:
-a.sboTerm = 25'''
+a.sboTerm = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/SBO_param2_rt.txt
 SBO_param2_rt = '''// Created by libAntimony v2.12.0
@@ -1262,7 +1276,8 @@ a = 3;
 const a;
 
 // SBO terms:
-a.sboTerm = 25'''
+a.sboTerm = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/hasPart_rt.txt
 hasPart_rt = '''// Created by libAntimony v2.12.0
@@ -1357,7 +1372,8 @@ species a;
 a = ;
 
 // SBO terms:
-a.sboTerm = 25'''
+a.sboTerm = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/eventDelay.txt
 eventDelay = '''//Created by libAntimony v2.5
@@ -1458,7 +1474,8 @@ model *foo()
 
   // Other declarations:
   const sboTerm;
-end'''
+end
+'''
 
 # Original source: <antimony-root>/src/test/test-data/encodes_rt.txt
 encodes_rt = '''// Created by libAntimony v2.12.0
@@ -1492,7 +1509,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.mean = 25'''
+a.mean = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/mode_rt.txt
 mode_rt = '''// Created by libAntimony v2.12.0
@@ -1503,7 +1521,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.mode = 25'''
+a.mode = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/fluxes_and_objectives.txt
 fluxes_and_objectives = '''J0: s1->;
@@ -1554,7 +1573,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.median = 25'''
+a.median = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/subsubport.txt
 subsubport = '''model foo(x0)
@@ -1620,7 +1640,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.skewness = 25'''
+a.skewness = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/variance_rt.txt
 variance_rt = '''// Created by libAntimony v2.12.0
@@ -1631,7 +1652,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.variance = 25'''
+a.variance = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/kurtosis_rt.txt
 kurtosis_rt = '''// Created by libAntimony v2.12.0
@@ -1654,7 +1676,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.sampleSize = 25'''
+a.sampleSize = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/SBO_submodel_rt.txt
 SBO_submodel_rt = '''// Created by libAntimony v2.12.0
@@ -1714,7 +1737,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.standardError = 25'''
+a.standardError = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/standardDeviation_rt.txt
 standardDeviation_rt = '''// Created by libAntimony v2.12.0
@@ -1725,7 +1749,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.standardDeviation = 25'''
+a.standardDeviation = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/coefficientOfVariation_rt.txt
 coefficientOfVariation_rt = '''// Created by libAntimony v2.12.0
@@ -1736,7 +1761,8 @@ a = ;
 const a;
 
 // Uncertainty parameters:
-a.coefficientOfVariation = 25'''
+a.coefficientOfVariation = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/confidenceInterval_rt.txt
 confidenceInterval_rt = '''// Created by libAntimony v2.12.0
@@ -1785,7 +1811,8 @@ b = ;
 var b;
 
 // SBO terms:
-E0.sboTerm = 901'''
+E0.sboTerm = 901
+'''
 
 # Original source: <antimony-root>/src/test/test-data/SBO_reaction_rt.txt
 SBO_reaction_rt = '''// Created by libAntimony v2.12.0
@@ -1799,7 +1826,8 @@ J0: A -> ; ;
 A = ;
 
 // SBO terms:
-J0.sboTerm = 888'''
+J0.sboTerm = 888
+'''
 
 # Original source: <antimony-root>/src/test/test-data/rxn_right_mod_rt.txt
 rxn_right_mod_rt = '''// Created by libAntimony v2.10.0
@@ -1813,7 +1841,8 @@ model *foo()
 
   // Species initializations:
   S1 = ;
-end'''
+end
+'''
 
 # Original source: <antimony-root>/src/test/test-data/interquartileRange_rt.txt
 interquartileRange_rt = '''// Created by libAntimony v2.12.0
@@ -1840,7 +1869,8 @@ a = ;
 const a;
 
 // SBO terms:
-a.sboTerm = 25'''
+a.sboTerm = 25
+'''
 
 # Original source: <antimony-root>/src/test/test-data/interactionActivation_rt.txt
 interactionActivation_rt = '''//Created by libAntimony v2.5
@@ -2228,6 +2258,9 @@ model *bar1()
   //Deleted elements from submodels:
   delete A.P1;
 end
+'''
+
+import_string = '''import \"/home/lpsmith/antimony/testmodels/model1.txt\"
 '''
 
 # Original source: <antimony-root>/src/test/test-data/model2.txt
