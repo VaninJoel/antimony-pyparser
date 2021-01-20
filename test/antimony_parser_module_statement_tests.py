@@ -1,6 +1,6 @@
 import unittest
 import unittest.mock as mock
-from antimony_parser import AntimonyParser
+from antimony_sa.antimony_parser import AntimonyParser
 import inspect
 from .test_strings import *
 
@@ -42,6 +42,10 @@ class AntimonyParserModuleStatementTests(unittest.TestCase):
         print(import_string)
         tree = self.parser.parse(import_string)
         print(tree)
+        import_tree = list(tree.find_data("import"))
+        print(import_tree[0].children)
+        print(list(tree.find_pred(lambda x: '"/home/lpsmith/antimony/testmodels/model1.txt"' in x.children)))
+        # self.compare_parsed_tokens(import_string, "import", ["import", '"home/lpsmith/antimony/testmodels/model1.txt"'])
 
     def test_module_name_parses_correctly(self):
         print(module_name)
