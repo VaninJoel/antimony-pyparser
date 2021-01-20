@@ -1,4 +1,4 @@
-# antimony-parser
+# antimony-pyparser
 Small Python package for parsing antimony using Pythons [lark](https://github.com/lark-parser/lark). 
 
 ## Current Development strategy
