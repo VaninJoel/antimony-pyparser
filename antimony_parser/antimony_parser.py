@@ -19,6 +19,9 @@ be useful for the network evolution projects.
 # /'[^']*'/
 
 class WordTransformer(lark.Transformer):
+    """
+    Placeholder transformer. May be useful later for shaping the parsed AST
+    """
     word_dict = dict(
 
     )

@@ -1,4 +1,5 @@
 # Simple script for pulling out test strings from antimony test-data directory
+# You will need to change the `directory` variable below.
 
 import glob
 import os

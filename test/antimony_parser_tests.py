@@ -1,6 +1,6 @@
 import unittest
 import unittest.mock as mock
-from antimony_sa.antimony_parser import AntimonyParser
+from antimony_parser.antimony_parser import AntimonyParser
 import inspect
 from .test_strings import *
 
