@@ -1,9 +1,20 @@
+#HACKS for import error----------------------------------------------------------------------------------------------------------------------------------------
+import sys
+import os
+
+PACKAGE_PARENT = '..'
+SCRIPT_DIR = os.path.dirname(os.path.realpath(os.path.join(os.getcwd(), os.path.expanduser(__file__))))
+
+sys.path.append(os.path.normpath(os.path.join(SCRIPT_DIR, PACKAGE_PARENT)))
+#-----------------------------------------------------------------------------------------------------------------------------------------------
+
 import unittest
 import unittest.mock as mock
-from antimony_parser.antimony_parser import AntimonyParser
-import inspect
-from .test_strings import *
 
+import inspect
+
+from antimony_pyparser.antimony_parser import AntimonyParser # ImportError: attempted relative import with no known parent package
+from test_strings import *
 
 class AntimonyParserModuleStatementTests(unittest.TestCase):
     parser = AntimonyParser()
