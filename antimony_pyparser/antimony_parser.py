@@ -53,3 +53,7 @@ class AntimonyParser(lark.Visitor):
         # print(tree.data, type(tree.data), tree.children[1])
         tree.children[1] = str(float(tree.children[1]) + 1)
         return tree
+    
+    def printLarkTree(self, tree):
+        """Easier visualization for debugging"""
+        return lark.Tree.pretty(tree)
